@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/Routes/About/about_screen.dart';
-import 'package:personal_portfolio/Routes/Blog/blog_screen.dart';
-import 'package:personal_portfolio/Routes/Personal/personal_project.dart';
-import 'package:personal_portfolio/Routes/Project/project_screen.dart';
-import 'package:personal_portfolio/constant.dart';
+import 'package:personal_portfolio/components/concept._button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,7 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[300],
       body: SafeArea(
         child: Stack(
           children: [
@@ -30,8 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
-                        'lib/assets/images/personal.jpeg',
-                        height: defaultHeight,
+                        'lib/assets/images/personal.png',
+                        height: 350,
                       ),
                     ),
                     Padding(
@@ -61,173 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    SizedBox(
-                      width: 366.7,
-                      height: 120.0,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => AboutScreen(),
-                                ),
-                              );
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.all(5.25),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: bgColor,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                width: 100,
-                                height: 150,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(100),
-                                      child: Image.asset(
-                                        'lib/assets/images/aboutme.png',
-                                        fit: BoxFit.contain,
-                                        height: 50,
-                                      ),
-                                    ),
-                                    Text(
-                                      'About',
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => BlogScreen(),
-                                ),
-                              );
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.all(5.25),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: bgColorSelect2,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                width: 100,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    ClipRRect(
-                                      child: Image.asset(
-                                        'lib/assets/images/project.png',
-                                        fit: BoxFit.cover,
-                                        height: 50,
-                                      ),
-                                    ),
-                                    Text(
-                                      'My Projects',
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => PersonalProjectScreen(),
-                                ),
-                              );
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.all(5.25),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: bgColorSelect3,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                width: 100,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    ClipRRect(
-                                      child: Image.asset(
-                                        'lib/assets/images/personal.png',
-                                        fit: BoxFit.contain,
-                                        height: 50,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Personal',
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => ProjectScreen(),
-                                ),
-                              );
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.all(5.25),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.grey[300],
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                width: 100,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(50),
-                                      child: Image.asset(
-                                        'lib/assets/images/blog.png',
-                                        height: 50,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Blog Views',
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    ConceptButton(),
                     SizedBox(height: 20),
                     Padding(
                       padding: const EdgeInsets.all(15.0),

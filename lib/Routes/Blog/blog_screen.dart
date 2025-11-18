@@ -6,6 +6,6 @@ class BlogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(), backgroundColor: bgColorSelect2);
+    return Scaffold(appBar: AppBar(), backgroundColor: Colors.red);
   }
 }
