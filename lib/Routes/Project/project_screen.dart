@@ -48,6 +48,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         color: Colors.red,
                         child: Center(child: Text('Hello world')),
                       ),
+                      Container(child: Text('Welcome Home')),
                     ],
                   );
                 },
